@@ -12,6 +12,12 @@
 	</head>
 	<body>
 		<div class="container">
+		<% if notice %>
+		  <p class="alert alert-notice"><%= notice %></p>
+		<% end %>
+		<% if alert %>
+		  <p class="alert alert-error"><%= alert %></p>
+		<% end %>
 		  <%= yield %>
 		</div>
 		<div class="topbar">
@@ -19,6 +25,7 @@
 		    <div class="container">
 		      <a class="brand" href="/">The Idea app</a>
 		      <ul class="nav">
+			<li ><%= link_to 'New Idea', new_idea_path %></li>
 			<li class="active"><a href="/ideas">Ideas</a></li>
 		      </ul>
 		    </div>
